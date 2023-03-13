@@ -12,7 +12,7 @@ class Tokenizer:
         if type(text) is not str:
             raise ValueError()
 
-        return re_sub(r'([^A-Za-z\-\s]|\n+|\s+)', " ", text, flags=IGNORECASE | MULTILINE)
+        return re_sub(r'([^A-Za-z\s]|\n+|\s+)', " ", text, flags=IGNORECASE | MULTILINE)
 
     @staticmethod
     def normalize(denoised_text="") -> str:
