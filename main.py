@@ -13,7 +13,7 @@ if __name__ == "__main__":
     # Update this part for testing
     import sys
     from pathlib import Path
-    if sys.argv[1] == "-t":
+    if len(sys.argv) > 1 and sys.argv[1] == "-t":
         VAL_PATH=Path("./Assignment-1-Updated/Gold Query-Set Boolean Queries.txt")
         with open(VAL_PATH, "r") as f:
             content = f.read()
