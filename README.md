@@ -12,4 +12,4 @@
 - `NOT` | Example: ``NOT england``
 - `AND` | Example: ``snap AND england``
 - `OR`  | Example: ``snap OR england``
-- `/?`  | Example: `` snap england /3`
+- `/?`  | Example: ``snap england /3``
