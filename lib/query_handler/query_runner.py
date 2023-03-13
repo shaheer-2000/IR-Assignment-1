@@ -38,6 +38,7 @@ class QueryRunner:
 
                     while proximity_iterator < len(proximity_terms):
                         proximity_postings_list = self.intersect_postings_by_position(proximity_terms[proximity_iterator], proximity_terms[proximity_iterator + 1], proximity_upper_bound)
+                        # print(proximity_terms[proximity_iterator], proximity_terms[proximity_iterator + 1], proximity_upper_bound)
                         proximity_iterator += 2
                         if res is None:
                             res = proximity_postings_list
@@ -68,7 +69,9 @@ class QueryRunner:
 
             while i <  count_positions_a and j < count_positions_b:
                 diff = positions_a[i] - positions_b[j]
-                if diff > 0 and diff <= proximity_upper_bound:
+                # TODO: figure out why did I do "diff > 0?"
+                # if diff > 0 and diff <= proximity_upper_bound:
+                if abs(diff) <= proximity_upper_bound:
                     res.append(docID)
                     break
                 elif diff < 0:
